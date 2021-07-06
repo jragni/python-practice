@@ -21,3 +21,13 @@ def sum_pairs(nums, goal):
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+
+    potential_answers = {}
+    for num in nums:
+        potential = goal - num
+        if potential in potential_answers:
+            return (potential, num)
+        else:
+            potential_answers[num] = potential_answers
+    
+    return ()
