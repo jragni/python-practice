@@ -1,3 +1,14 @@
+
+DAYS = {
+            1 : "Sunday",
+            2 : "Monday",
+            3 : "Tuesday",
+            4 : "Wednesday",
+            5 : "Thursday",
+            6 : "Friday",
+            7 : "Saturday" 
+}
+
 def weekday_name(day_of_week):
     """Return name of weekday.
     
@@ -12,15 +23,6 @@ def weekday_name(day_of_week):
         >>> weekday_name(9)
         >>> weekday_name(0)
     """
-    weekdays = {
-                1 : "Sunday",
-                2 : "Monday",
-                3 : "Tuesday",
-                4 : "Wednesday",
-                5 : "Thursday",
-                6 : "Friday",
-                7 : "Saturday" 
-    }  
 
-    return weekdays.get(weekday_name)
+    return  DAYS.get(day_of_week) if day_of_week else None
 
