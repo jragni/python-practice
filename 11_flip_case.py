@@ -13,8 +13,9 @@ def flip_case(phrase, to_swap):
     """
     
     flipped = ""
+    to_swap = to_swap.lower()
     for char in phrase:
-        if char.lower() == to_swap or char.upper() == to_swap:
+        if char.lower() == to_swap:
             flipped += char.swapcase()
         else:
             flipped += char
