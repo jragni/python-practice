@@ -16,3 +16,9 @@ def friend_date(a, b):
         >>> friend_date(sauron, gandalf)
         True
     """
+    # Assuming arguements passed are ALWAYS correctly formatted
+    has_common = (list(set(a[-1]) & set(b[-1])))
+    if(has_common):
+        return True
+    else:
+        return False

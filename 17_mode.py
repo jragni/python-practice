@@ -1,3 +1,5 @@
+from collections import Counter
+
 def mode(nums):
     """Return most-common number in list.
 
@@ -11,12 +13,4 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
-    highest_frequency_num = 0
-    highest_frequency = 0
-
-    for num in nums:
-        if nums.count(num) > highest_frequency:
-            highest_frequency = nums.count(num)
-            highest_frequency_num = num
-    return highest_frequency_num
-    
+    return Counter(nums).most_common(1)[0][0]

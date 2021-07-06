@@ -49,15 +49,17 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
     return f"{message} {answer}"
 
 def add(a, b):
+    """Adds two parameters"""
     return a + b
 
-def subtract(a, b): 
+def subtract(a, b):
+    """Subtracts two parameters"""
     return a - b
 
 def multiply(a, b):
+    """Multiplies two params"""
     return a * b 
 
 def divide(a , b):
-    # check for b == 0
-    # use raise to throw error (for future)
+    """divides two params"""
     return a / b 
