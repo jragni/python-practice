@@ -19,3 +19,17 @@ def find_greater_numbers(nums):
         >>> find_greater_numbers([])
         0
     """
+    longest = 0
+    current_longest = 0
+    prev_num = nums[0]
+    for i in range(1,len(nums)):
+        if current_longest > longest:
+            longest = current_longest 
+        if prev_num > nums[i]:
+            current_longest += 1
+        else:
+            current_longest = 0
+        prev_num = nums[i]
+
+
+    return longest

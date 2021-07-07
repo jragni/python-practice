@@ -18,7 +18,5 @@ def friend_date(a, b):
     """
     # Assuming arguements passed are ALWAYS correctly formatted
     has_common = (list(set(a[-1]) & set(b[-1])))
-    if(has_common):
-        return True
-    else:
-        return False
+    return True if(has_common) else False
+  

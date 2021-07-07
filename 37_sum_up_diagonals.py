@@ -18,3 +18,16 @@ def sum_up_diagonals(matrix):
         >>> sum_up_diagonals(m2)
         30
     """
+
+    left = 0
+    right = len(matrix[0]) - 1
+    left_sum = 0
+    right_sum = 0
+    for sub_mat in matrix:
+        left_sum += sub_mat[left]
+        right_sum += sub_mat[right]
+        right -= 1
+        left += 1
+
+    return left_sum + right_sum
+        

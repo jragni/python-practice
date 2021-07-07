@@ -1,3 +1,6 @@
+import collections
+
+
 def includes(collection, sought, start=None):
     """Is sought in collection, starting at index start?
 
@@ -30,3 +33,42 @@ def includes(collection, sought, start=None):
         >>> includes({"apple": "red", "berry": "blue"}, "blue")
         True
     """
+
+    #  Return True/False if sought is in the given collection:
+    # - lists/strings/sets/tuples: returns True/Failse if sought present
+    # - dictionaries: return True/False if *value* of sought in dictionary
+
+    # If string/list/tuple and `start` is provided, starts searching only at that
+    # index. This `start` is ignored for sets/dictionaries, since they aren't
+    # ordered.
+
+    # Handle Strings    
+    if isinstance(collection, str):
+        if start:
+            return True if collection.find(sought, start) else False
+        else:
+            return True if sought in collection else False
+    
+    # Handle Tuple
+    elif isinstance(collection, tuple):
+        if start:
+            try:
+                return True if collection.index(sought, start) else False
+            except:
+                return False
+        else:
+            return True if collection.count(sought) != 0 else False
+
+    # Handle list
+    elif isinstance(collection, list):
+        if start:
+            try:
+                return True if collection.index(sought, start) else False
+            except:
+                return False
+        else:
+            return True if sought in collection else False
+
+    # Handle Dictionary
+    elif isinstance(collection, dict):
+        return True if sought in collection.values() else False
